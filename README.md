@@ -42,6 +42,7 @@ Technologies used to develop this project:
 
 - Run `npm i` or `yarn` to install the dependencies
 - Run the development server with `npm run dev` or `yarn dev`
+- Run tests with `npm run test` or `yarn test`
 
 ## 🖥 Preview
 https://user-images.githubusercontent.com/49074930/147984154-99a8f1ed-b7dd-4a42-9318-56a67ed0e3d6.mp4
