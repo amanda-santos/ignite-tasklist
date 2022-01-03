@@ -1,5 +1,5 @@
 <h1 align="center">
- My Tasks
+ 📝 My Tasks
 </h1>
 
 <p align="center">
@@ -44,6 +44,7 @@ Technologies used to develop this project:
 - Run the development server with `npm run dev` or `yarn dev`
 
 ## 🖥 Preview
+https://user-images.githubusercontent.com/49074930/147984154-99a8f1ed-b7dd-4a42-9318-56a67ed0e3d6.mp4
 
 ## 🤔 How to contribute
 
