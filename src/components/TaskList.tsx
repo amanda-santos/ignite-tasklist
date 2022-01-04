@@ -16,38 +16,34 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   function handleCreateNewTask() {
-    if (newTaskTitle) {
-      setTasks([
-        ...tasks,
-        {
-          id: generateRandomInteger(1000),
-          title: newTaskTitle,
-          isComplete: false,
-        },
-      ]);
-      setNewTaskTitle("");
-    }
+    if (!newTaskTitle) return;
+
+    setTasks((oldState) => [
+      ...oldState,
+      {
+        id: generateRandomInteger(1000),
+        title: newTaskTitle,
+        isComplete: false,
+      },
+    ]);
+    setNewTaskTitle("");
   }
 
   function handleToggleTaskCompletion(id: number) {
-    const selectedTaskIndex = findIndexById(tasks, id);
-    const selectedTask = tasks[selectedTaskIndex];
-
-    if (selectedTask) {
-      let updatedTasks = [...tasks];
-      updatedTasks[selectedTaskIndex] = {
-        ...selectedTask,
-        isComplete: !selectedTask.isComplete,
-      };
-      setTasks(updatedTasks);
-    }
+    const newTasks = tasks.map((task) =>
+      task.id === id
+        ? {
+            ...task,
+            isComplete: !task.isComplete,
+          }
+        : task
+    );
+    setTasks(newTasks);
   }
 
   function handleRemoveTask(id: number) {
-    let updatedTasks = [...tasks];
-    const selectedTaskIndex = findIndexById(tasks, id);
-    updatedTasks.splice(selectedTaskIndex, 1);
-    setTasks(updatedTasks);
+    const filteredTasks = tasks.filter((task) => task.id !== id);
+    setTasks(filteredTasks);
   }
 
   return (
